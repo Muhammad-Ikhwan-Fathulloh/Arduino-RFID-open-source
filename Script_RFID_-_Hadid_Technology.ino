@@ -20,6 +20,8 @@ char str[32] = "";
 String StrUID;
 
 void setup() {
+  Serial.begin(9600);//Arduino
+  //Serial.begin(115200);//ESP
   //RFID
   SPI.begin(); // Inisialisasi SPI bus
   mfrc522.PCD_Init(); // Inisialisasi MFRC522
@@ -34,7 +36,15 @@ void loop() {
     Serial.println("Berhasil");
           
     //Ubah tipe data id menjadi string
-    String id_kartu = StrUID; 
+    String id_kartu = StrUID;//gunakan data ini
+    
+    Serial.println(id_kartu);
+    //Masukkan kodemu dibawah disini 
+    //---------------------------------
+
+    
+    
+    //---------------------------------
   }
 }
 
