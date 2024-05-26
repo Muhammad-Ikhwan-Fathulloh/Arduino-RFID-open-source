@@ -37,13 +37,9 @@ void loop() {
   readsuccess = getid();
   if(readsuccess){
     //Cetak pembacaan id
-    Serial.println(StrUID);
+    Serial.println(StrUID); //StrUID gunakan variabel ini untuk data id
     Serial.println("Berhasil");
           
-    //Ubah tipe data id menjadi string
-    String cardId = StrUID;//gunakan data ini
-    
-    Serial.println(cardId);
     //Masukkan kodemu dibawah disini 
     //---------------------------------
 
