@@ -1,5 +1,7 @@
 # Arduino-RFID
 
+## RFID RC522 with ESP32
+
 | RFID RC522 | ESP32 |
 | ------------- | ------------- |
 | SDA | 15 |
@@ -9,6 +11,8 @@
 | GND | GND |
 | RST | 2 |
 | +3.3V | +3.3V |
+
+## RFID RC522 with ESP8266
 
 | RFID RC522 | ESP8266 |
 | ------------- | ------------- |
