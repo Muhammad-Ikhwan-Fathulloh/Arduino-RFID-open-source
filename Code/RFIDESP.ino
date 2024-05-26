@@ -1,15 +1,19 @@
-//Nama = Muhammad Ikhwan Fathulloh
-//Portofolio = https://muhammadikhwanfathulloh-b5ac3.web.app/
-//Github = https://github.com/Muhammad-Ikhwan-Fathulloh
-//Gmail = muhammadikhwanfathulloh17@gmail.com
+//Check Board ESP
+#ifdef ESP8266
+#include <ESP8266WiFi.h>
+#elif defined(ESP32)
+#include <WiFi.h>
+#else
+#error "Board not found"
+#endif
 
 //Library RFID
 #include <SPI.h>//Serial Peripheral Interface
 #include <MFRC522.h>
 
 //Pengaturan pin data dan reset RFID
-constexpr uint8_t RST_PIN = 2;//Ubah pin sesuai kebutuhan 
-constexpr uint8_t SS_PIN = 15;//Ubah pin sesuai kebutuhan 
+constexpr uint8_t RST_PIN = 2;     // Configurable, see typical pin layout above
+constexpr uint8_t SS_PIN = 15;     // Configurable, see typical pin layout above
 
 //RFID
 MFRC522 mfrc522(SS_PIN, RST_PIN);
@@ -20,11 +24,12 @@ char str[32] = "";
 String StrUID;
 
 void setup() {
-  Serial.begin(9600);//Arduino
-  //Serial.begin(115200);//ESP
+  //Serial.begin(9600);//Arduino
+  Serial.begin(115200);//ESP
   //RFID
   SPI.begin(); // Inisialisasi SPI bus
   mfrc522.PCD_Init(); // Inisialisasi MFRC522
+  Serial.println("Hello RFID");
 }
 
 void loop() {
@@ -36,9 +41,9 @@ void loop() {
     Serial.println("Berhasil");
           
     //Ubah tipe data id menjadi string
-    String id_kartu = StrUID;//gunakan data ini
+    String cardId = StrUID;//gunakan data ini
     
-    Serial.println(id_kartu);
+    Serial.println(cardId);
     //Masukkan kodemu dibawah disini 
     //---------------------------------
 
@@ -46,6 +51,7 @@ void loop() {
     
     //---------------------------------
   }
+  delay(1000);
 }
 
 //Ambil id untuk verifikasi
