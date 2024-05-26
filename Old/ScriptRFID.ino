@@ -1,8 +1,3 @@
-//Nama = Muhammad Ikhwan Fathulloh
-//Portofolio = https://muhammadikhwanfathulloh-b5ac3.web.app/
-//Github = https://github.com/Muhammad-Ikhwan-Fathulloh
-//Gmail = muhammadikhwanfathulloh17@gmail.com
-
 //Library RFID
 #include <SPI.h>//Serial Peripheral Interface
 #include <MFRC522.h>
