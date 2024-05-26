@@ -37,7 +37,7 @@ void loop() {
   readsuccess = getid();
   if(readsuccess){
     //Cetak pembacaan id
-    Serial.println(StrUID); //StrUID gunakan variabel ini untuk data id
+    Serial.println(StrUID); //Gunakan variabel (StrUID) ini untuk data id RFID
     Serial.println("Berhasil");
           
     //Masukkan kodemu dibawah disini 
